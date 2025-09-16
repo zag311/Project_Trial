@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Recraft.Pages.QuizPage"
+             Title="Eco Quiz"
+             BackgroundColor="White">
+    <VerticalStackLayout>
+        <Grid HeightRequest="80" BackgroundColor="LightGreen" Padding="20">
+            <Image Source="logo.png" HeightRequest="40" HorizontalOptions="Start" VerticalOptions="Center"/>
+            <Label Text="RECRAFT IDEAS"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   TextColor="Gray"/>
+        </Grid>
+
+        <Label x:Name="QuestionNumberLabel"
+               Text="Question 1 of 5"
+               FontSize="20"
+               TextColor="DarkGreen"
+               HorizontalOptions="Center"
+               Margin="0,50,0,0"/>
+
+        <Label x:Name="QuestionLabel"
+               Text=""
+               FontSize="22"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="Black"
+               HorizontalTextAlignment="Center"
+               Margin="20"/>
+
+        <VerticalStackLayout x:Name="OptionsContainer" Spacing="10" Margin="10,10,10,20">
+            <Frame HasShadow="True" BorderColor="#E0E0E0" CornerRadius="5" BackgroundColor="White" Padding="10">
+                <RadioButton TextColor="Black" x:Name="OptionA" GroupName="Options" Content="Option A Text" />
+            </Frame>
+            <Frame HasShadow="True" BorderColor="#E0E0E0" CornerRadius="5" BackgroundColor="White" Padding="10">
+                <RadioButton TextColor="Black" x:Name="OptionB" GroupName="Options" Content="Option B Text" />
+            </Frame>
+            <Frame HasShadow="True" BorderColor="#E0E0E0" CornerRadius="5" BackgroundColor="White" Padding="10">
+                <RadioButton TextColor="Black" x:Name="OptionC" GroupName="Options" Content="Option C Text" />
+            </Frame>
+            <Frame HasShadow="True" BorderColor="#E0E0E0" CornerRadius="5" BackgroundColor="White" Padding="10">
+                <RadioButton TextColor="Black" x:Name="OptionD" GroupName="Options" Content="Option D Text" />
+            </Frame>
+        </VerticalStackLayout>
+
+        <Button x:Name="NextButton"
+                Text="Next"
+                Clicked="OnNextClicked"
+                BackgroundColor="LightGreen"
+                TextColor="White"
+                FontAttributes="Bold"
+                WidthRequest="180"
+                HorizontalOptions="Center"
+                Margin="0,50,0,0"/>
+
+        <HorizontalStackLayout x:Name="ResultButtons" IsVisible="False" HorizontalOptions="Center" Spacing="20" Margin="20">
+            <Button Text="Retry"
+                    Clicked="OnRetryClicked"
+                    BackgroundColor="LightGreen"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    WidthRequest="120" />
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>  

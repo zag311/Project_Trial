@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Recraft.Pages.SubmitIdeaPage"
+             Title="Submit Your Idea"
+             BackgroundColor="White">
+
+    <VerticalStackLayout>
+
+        <Grid HeightRequest="80" BackgroundColor="LightGreen" Padding="20" >
+            <Image Source="logo.png" HeightRequest="40" HorizontalOptions="Start" VerticalOptions="Center"/>
+            <Label Text="RECRAFT IDEAS" HorizontalOptions="Center" VerticalOptions="Center" FontSize="35" FontAttributes="Bold" TextColor="Gray">
+            </Label>
+        </Grid>
+
+        <Label Text="SUBMIT YOUR IDEA!" 
+               FontSize="24" 
+               FontAttributes="Bold" 
+               TextColor="DarkGreen" 
+               HorizontalOptions="Center" 
+               Margin="20"/>
+
+        <Entry x:Name="TitleEntry" 
+               Placeholder="CRAFT TITLE"
+               WidthRequest="200"
+               BackgroundColor="LightGreen"
+               TextColor="Black" 
+               FontAttributes="Bold" 
+               Margin="20"/>
+
+        <Frame Margin="20" WidthRequest="180" HeightRequest="150" BackgroundColor="#EEE" CornerRadius="10" Padding="0" BorderColor="Gray">
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <Image x:Name="SelectedImage" Source="image_placeholder.png" HeightRequest="100" />
+                <Label Text="Upload Image" TextColor="Gray" FontAttributes="Italic" />
+            </StackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnImageTapped" />
+            </Frame.GestureRecognizers>
+        </Frame>
+
+        <Editor WidthRequest="350" Margin="20" x:Name="DescriptionEditor" Placeholder="DESCRIPTION" AutoSize="TextChanges" BackgroundColor="LightGreen" TextColor="Black" FontAttributes="None" HeightRequest="100"/>
+
+        <Picker WidthRequest="200" x:Name="ItemTypePicker" Margin="20" Title="ITEM TYPE" BackgroundColor="LightGreen" TextColor="Black" FontAttributes="Bold">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Plastic Bottles</x:String>
+                    <x:String>Paper</x:String>
+                    <x:String>Tin Cans</x:String>
+                    <x:String>Glass Jars</x:String>
+                    <x:String>Old Clothes</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Button Text="➕ SUBMIT" 
+                Clicked="OnSubmitClicked" 
+                BackgroundColor="LightGreen" 
+                WidthRequest="250"
+                TextColor="Black" 
+                CornerRadius="10" 
+                FontAttributes="Bold"
+                Margin="20"/>
+    </VerticalStackLayout>
+</ContentPage>

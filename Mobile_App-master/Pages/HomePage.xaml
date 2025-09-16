@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Recraft.Pages.HomePage"
+             Title="Idea of the Day"
+             BackgroundColor="White">
+    <ScrollView x:Name="MainScrollView">
+        <StackLayout>
+            <!-- Header -->
+            <Grid HeightRequest="80" BackgroundColor="LightGreen" Padding="20" >
+                <Image Source="logo.png" HeightRequest="40" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Label Text="RECRAFT IDEAS" HorizontalOptions="Center" VerticalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="Gray"/>
+            </Grid>
+
+
+            <!-- Idea Content -->
+            <VerticalStackLayout Padding="10" x:Name="IdeaLayout">
+                <Label Text="IDEA OF THE DAY!" 
+                       FontSize="24" 
+                       FontAttributes="Bold" 
+                       TextColor="DarkGreen" 
+                       HorizontalOptions="Center"
+                       Margin="50"/>
+
+                <Label x:Name="TitleLabel" 
+                       FontSize="24" 
+                       FontAttributes="Bold" 
+                       TextColor="DarkGreen"
+                       HorizontalOptions="Center"/>
+
+                <Image x:Name="IdeaImage" 
+                       HeightRequest="200" 
+                       Aspect="AspectFit" />
+
+                <Label x:Name="ItemTypeLabel" 
+                       FontAttributes="Italic" 
+                       TextColor="Gray"
+                       HorizontalOptions="Center"/>
+
+                <Label x:Name="DescriptionLabel" 
+                       FontSize="16" 
+                       TextColor="Black"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <Grid ColumnDefinitions="*,*" Margin="40,10">
+                <Button x:Name="BackButton"
+                        Text="Back"
+                        Clicked="OnBackClicked"
+                        BackgroundColor="LightGreen"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        WidthRequest="100"
+                        IsEnabled="False"
+                        Grid.Column="0"/>
+
+                <Button Text="Next"
+                        Clicked="OnNextClicked"
+                        BackgroundColor="LightGreen"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        WidthRequest="100"
+                        Grid.Column="1"/>
+            </Grid>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

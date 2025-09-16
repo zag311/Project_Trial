@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Recraft.Pages"
+    x:Class="Recraft.AppShell"
+    BackgroundColor="LightGreen"
+    Shell.TabBarBackgroundColor="LightGreen"
+    Shell.TabBarForegroundColor="White" 
+    Shell.TabBarUnselectedColor="Gray"
+    Shell.TabBarTitleColor="Black">
+
+    <TabBar>
+        <ShellContent
+            Title="Home"
+            Route="home"
+            Icon="home.png"
+            ContentTemplate="{DataTemplate pages:HomePage}" />
+
+        <ShellContent
+            Title="Search"
+            Route="search"
+            Icon="search.png"
+            ContentTemplate="{DataTemplate pages:SearchPage}" />
+
+        <ShellContent
+            Title="Submit"
+            Route="submit"
+            Icon="plus.png"
+            ContentTemplate="{DataTemplate pages:SubmitIdeaPage}" />
+
+        <ShellContent
+            Title="Quiz"
+            Route="quiz"
+            Icon="quiz.png"
+            ContentTemplate="{DataTemplate pages:QuizPage}" />
+    </TabBar>
+</Shell>
